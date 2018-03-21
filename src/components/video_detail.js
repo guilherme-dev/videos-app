@@ -1,26 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactPlayer from "react-player";
 
-class VideoDetail extends Component {
-  render() {
-    if (!this.props.video) return <div>Loading...</div>;
-    const url = `https://www.youtube.com/watch?v=${
-      this.props.video.id.videoId
-    }`;
-    return (
-      <div className="col-md-8 video-detail">
-        <div className="embed-responsive embed-responsive-16x9">
-          <div className="container container-video">
-            <ReactPlayer url={url} width="100%" />
-          </div>
-        </div>
-        <div className="details">
-          <div>{this.props.video.snippet.title}</div>
-          <div>{this.props.video.snippet.description}</div>
-        </div>
+const VideoDetail = props => {
+  if (!props.video) return <div>Loading...</div>;
+  const url = `https://www.youtube.com/watch?v=${props.video.id.videoId}`;
+  return (
+    <div className="col-md-8 video-detail">
+      <ReactPlayer url={url} />
+      <div className="details" style={{ "max-width": "640px" }}>
+        <h2>{props.video.snippet.title}</h2>
+        <p>{props.video.snippet.description}</p>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default VideoDetail;
