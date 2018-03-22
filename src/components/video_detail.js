@@ -6,8 +6,8 @@ const VideoDetail = props => {
   const url = `https://www.youtube.com/watch?v=${props.video.id.videoId}`;
   return (
     <div className="col-md-8 video-detail">
-      <ReactPlayer url={url} />
-      <div className="details" style={{ "max-width": "640px" }}>
+      <ReactPlayer url={url} width="100%" />
+      <div className="details">
         <h2>{props.video.snippet.title}</h2>
         <p>{props.video.snippet.description}</p>
       </div>

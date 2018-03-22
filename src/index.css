@@ -1,0 +1,16 @@
+
+
+.video-detail {
+  padding: 10px;
+}
+.video-detail .details {
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+.list-group-item {
+  cursor: pointer;
+}
+.list-group-item:hover {
+  background-color: #eee;
+}
